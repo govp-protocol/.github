@@ -1,6 +1,8 @@
-# GOVP
+<p align="center">
+  <img alt="GOVP — Sign once. Verify anywhere. Open protocol, local verification, no central API." src="https://raw.githubusercontent.com/govp-protocol/govp/main/brand/govp-org-header.svg" width="100%">
+</p>
 
-## Sign once. Verify anywhere.
+<p align="center"><strong>Open protocol stewarded by Gemacode.</strong></p>
 
 GOVP makes files and digital artifacts independently verifiable without an
 account, a central API or a proprietary verifier.
@@ -13,6 +15,10 @@ artifact bytes locally with an open implementation.
 [Read the documentation](https://govp.io/govp/docs.html) ·
 [Implement GOVP-1](https://github.com/govp-protocol/govp/blob/main/spec/GOVP-1.txt) ·
 [View the source](https://github.com/govp-protocol/govp)
+
+<p align="center">
+  <img alt="Sign a portable GOVP record, distribute it beside an artifact, then verify both locally." src="https://raw.githubusercontent.com/govp-protocol/govp/main/brand/govp-flow.svg" width="100%">
+</p>
 
 ## The problem GOVP solves
 
@@ -111,6 +117,10 @@ Good first contributions include:
 GOVP is stewarded by Gemacode, a brand of Brilyetz Holding S.L. The public
 GitHub organization is protocol-only: hosted products, customer systems and
 commercial extensions are outside its scope.
+
+The canonical GOVP visual identity and its usage rules are maintained in the
+[`govp/brand`](https://github.com/govp-protocol/govp/tree/main/brand)
+directory.
 
 Security reports should use
 [private vulnerability reporting](https://github.com/govp-protocol/govp/security/advisories/new)

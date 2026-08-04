@@ -1,0 +1,33 @@
+name: Protocol or documentation proposal
+description: Propose a reviewed change without silently altering the frozen GOVP-1 core.
+title: "[Proposal]: "
+labels: [proposal]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the concrete interoperability, security or documentation problem.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: State whether this is editorial, registry, profile or protocol work.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and conformance impact
+      description: Explain effects on signing bytes, existing vectors and implementations.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Publication safety
+      options:
+        - label: This proposal contains no secret, private evidence, personal data or live signing key.
+          required: true

@@ -1,0 +1,41 @@
+name: Reproducible bug
+description: Report a public GOVP implementation or documentation defect.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include secrets, personal records, private evidence or an unpatched vulnerability.
+  - type: input
+    id: version
+    attributes:
+      label: GOVP version
+      placeholder: 0.1.8
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Protocol specification
+        - Reference verifier or CLI
+        - Conformance vectors or schema
+        - Website or browser verifier
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use synthetic input and include exact commands, expected behavior and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime and relevant dependency versions.
+    validations:
+      required: true

@@ -58,6 +58,36 @@ GOVP verification: VALID
 The example is synthetic. Verification runs locally and sends neither the
 record nor the artifact to GOVP.
 
+## Change one line. Watch GOVP reject it.
+
+The same repository includes a copy of the artifact with one modified line.
+Its signed GOVP record is still authentic, but the supplied artifact no longer
+matches the SHA-256 digest inside that record.
+
+<p align="center">
+  <img alt="The original synthetic artifact passes GOVP verification while a one-line modification fails the asset SHA-256 check." src="https://raw.githubusercontent.com/govp-protocol/govp/main/brand/govp-integrity-demo.svg" width="100%">
+</p>
+
+```bash
+govp verify examples/manufacturing-record.govp.txt \
+  --asset examples/manufacturing-record.tampered.statement.txt
+```
+
+```text
+GOVP verification: INVALID
+  format       pass
+  signature    pass
+  govp-id      pass
+  canonical    not checked
+  asset        FAIL
+  record       GOVP-DOC-cb352d4b8a77
+```
+
+`signature pass` proves the record itself was not forged. `asset FAIL` proves
+the supplied bytes are not the exact artifact that record describes. The
+command exits with status `1`, so the same verification can gate a release or
+CI workflow.
+
 ## What a valid result means
 
 GOVP can establish that the record was signed by its included public key, that

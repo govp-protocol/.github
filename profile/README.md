@@ -38,11 +38,10 @@ Schema and byte-exact conformance vectors.
 ## Verify a signed artifact in 60 seconds
 
 ```bash
-git clone https://github.com/govp-protocol/govp.git
-cd govp
-python -m pip install .
-govp verify examples/manufacturing-record.govp.txt \
-  --asset examples/manufacturing-record.statement.txt
+python -m pip install govp==0.1.11
+govp examples --extract govp-examples
+govp verify govp-examples/manufacturing-record.govp.txt \
+  --asset govp-examples/manufacturing-record.statement.txt
 ```
 
 ```text
@@ -96,8 +95,9 @@ the signed SHA-256 digest. Remote verification can also bind the final HTTPS
 location to the signed canonical URL.
 
 GOVP does **not** decide whether a statement is true, certify the legal identity
-behind a key, provide revocation or create an independent timestamp. Those are
-separate trust and policy layers.
+behind a key or create an independent timestamp. The optional GOVP-STATUS-1
+extension adds same-origin key lifecycle and record revocation; those results
+remain separate from offline core validity and application policy.
 
 ## Built for artifacts that travel
 
@@ -133,11 +133,12 @@ for the layered verification model and primary specifications.
 
 | Repository | Responsibility | License |
 |---|---|---|
-| [`govp`](https://github.com/govp-protocol/govp) | GOVP-1 specification, schemas, conformance vectors and Python reference verifier | Apache-2.0 |
+| [`govp`](https://github.com/govp-protocol/govp) | GOVP-1 specification, schemas, conformance vectors and Python reference verifier 0.1.11 | Apache-2.0 |
+| [`govp-js`](https://github.com/govp-protocol/govp-js) | Independent Node/browser verifier [`@govp/verifier` 0.1.8](https://www.npmjs.com/package/@govp/verifier/v/0.1.8) | Apache-2.0 |
 | [`govp.io`](https://github.com/govp-protocol/govp.io) | Documentation, normative publication and local browser verifier | MIT |
 
-The protocol is not tied to Python. Its wire behavior is defined by the
-normative text and conformance vectors. Independent Go, Rust, JavaScript and
+The protocol is not tied to Python or JavaScript. Its wire behavior is defined
+by the normative text and conformance vectors. Independent Go, Rust, Java and
 other implementations are welcome.
 
 GOVP-1 is frozen. Low protocol churn is a compatibility guarantee by design;

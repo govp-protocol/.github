@@ -109,10 +109,25 @@ separate trust and policy layers.
 | Benchmarks and results | The precise result set associated with a declaration |
 | Operational records | A portable signed record outside the originating system |
 
-GOVP is intentionally narrower than Verifiable Credentials, C2PA and Sigstore.
-The projects solve different trust problems and can be used together. See
-[How GOVP fits](https://github.com/govp-protocol/govp/blob/main/docs/comparison.md)
-for a neutral comparison and selection guide.
+## Compose GOVP with the evidence stack you already use
+
+GOVP is not a replacement for signing, attestation or transparency systems.
+It provides a portable binding to their exact output bytes:
+
+- SCITT signed statements and transparency receipts;
+- COSE messages and DSSE envelopes;
+- in-toto attestations and bundles;
+- Sigstore bundles; and
+- Verifiable Credentials or C2PA objects when those models supply the claims,
+  identity or provenance layer.
+
+Each upstream object still requires its native verifier and policy. GOVP proves
+that the supplied bytes match the portable signed GOVP record; it does not
+silently inherit the upstream system's identity, transparency or attestation
+guarantees.
+
+Read [Composing GOVP with evidence ecosystems](https://github.com/govp-protocol/govp/blob/main/docs/composition.md)
+for the layered verification model and primary specifications.
 
 ## Open protocol building blocks
 

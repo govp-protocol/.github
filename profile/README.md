@@ -131,10 +131,14 @@ for the layered verification model and primary specifications.
 
 ## Open protocol building blocks
 
+The coordinated public GOVP release is **0.1.13** for Python, JavaScript and
+the website. The package release number is separate from the frozen GOVP-1
+wire format.
+
 | Repository | Responsibility | License |
 |---|---|---|
 | [`govp`](https://github.com/govp-protocol/govp) | GOVP-1 specification, schemas, conformance vectors and Python reference verifier 0.1.13 | Apache-2.0 |
-| [`govp-js`](https://github.com/govp-protocol/govp-js) | Independent Node/browser verifier [`@govp/verifier` 0.1.11](https://www.npmjs.com/package/@govp/verifier/v/0.1.11) | Apache-2.0 |
+| [`govp-js`](https://github.com/govp-protocol/govp-js) | Independent Node/browser verifier [`@govp/verifier` 0.1.13](https://www.npmjs.com/package/@govp/verifier/v/0.1.13) | Apache-2.0 |
 | [`govp.io`](https://github.com/govp-protocol/govp.io) | Documentation, normative publication and local browser verifier | MIT |
 
 The protocol is not tied to Python or JavaScript. Its wire behavior is defined
